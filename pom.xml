@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.meliksahcakir</groupId>
+    <artifactId>GuideFX</artifactId>
+    <name>GuideFX</name>
+    <packaging>jar</packaging>
+    <version>1.0</version>
+
+    <properties>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+    </properties>
+
+    <build>
+        <finalName>GuideFX</finalName>
+        <plugins>
+            <plugin>
+                <groupId>com.zenjava</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>8.8.3</version>
+                <executions>
+                    <execution>
+                        <id>create-native</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>native</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>Main</mainClass>
+                    <identifier>a64324c5-6e8a-4118-8c9a-8fcc7b108e81</identifier>
+                    <jvmArgs>
+                        <jvmArg>-XX:+UseThreadPriorities</jvmArg>
+                    </jvmArgs>
+                    <jvmProperties>
+                        <java.library.path>.</java.library.path>
+                    </jvmProperties>
+                    <nativeReleaseVersion>1.1.1</nativeReleaseVersion>
+                    <verbose>true</verbose>
+                    <copyAdditionalAppResourcesToJar>true</copyAdditionalAppResourcesToJar>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>de.jensd</groupId>
+            <artifactId>fontawesomefx</artifactId>
+            <version>8.9</version>
+        </dependency>
+    </dependencies>
+</project>
